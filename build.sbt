@@ -5,6 +5,8 @@ scalaVersion := "2.11.7"
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
+resolvers += "hseeberger at bintray" at "http://dl.bintray.com/hseeberger/maven"
+
 libraryDependencies ++= {
   val akkaV       = "2.3.12" // Akka HTTP not ciplied with Akka 2.4
   val akkaStreamV = "1.0"
@@ -15,6 +17,8 @@ libraryDependencies ++= {
     "com.typesafe.akka" %% "akka-http-core-experimental"          % akkaStreamV,
     "com.typesafe.akka" %% "akka-http-experimental"               % akkaStreamV,
     "com.typesafe.akka" %% "akka-http-testkit-experimental"       % akkaStreamV,
+    "de.heikoseeberger" %% "akka-http-json4s"                     % "1.1.0",
+    "org.json4s"        %% "json4s-jackson"                       % "3.3.0.RC3",
     "org.scalatest"     %% "scalatest"                            % scalaTestV % "test"
   )
 }
