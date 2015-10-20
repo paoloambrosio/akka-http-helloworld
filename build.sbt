@@ -18,3 +18,15 @@ libraryDependencies ++= {
     "org.scalatest"     %% "scalatest"                            % scalaTestV % "test"
   )
 }
+
+// http://www.scala-sbt.org/sbt-native-packager/formats/docker.html
+// https://docs.docker.com/articles/dockerfile_best-practices/
+
+enablePlugins(JavaServerAppPackaging)
+
+maintainer in Docker := "Paolo Ambrosio <docker@paolo.ambrosio.name>"
+packageSummary in Docker := "Hello World Application"
+packageDescription := "Akka HTTP Hello World Application"
+dockerExposedPorts := Seq(9000)
+//dockerBaseImage := "dockerfile/java"
+//dockerExposedVolumes := Seq("/opt/docker/logs")
